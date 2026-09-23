@@ -26,7 +26,10 @@ dependencies:
   path: ^1.9.0
 
   # Remote Database
-  supabase_flutter: ^2.6.0
+  # Pinned below 2.15.0: from 2.15.0 onward supabase_flutter pulls in the
+  # `passkeys` package, whose Windows plugin requires webauthn.dll (only
+  # present on Windows 10 1903+), which crashes app startup on Windows 8/8.1.
+  supabase_flutter: ">=2.6.0 <2.15.0"
 
   # Connectivity
   connectivity_plus: ^6.0.3
